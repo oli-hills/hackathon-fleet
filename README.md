@@ -16,3 +16,13 @@ flux bootstrap github \
   --interval=30s \
   --export > ./clusters/cluster-flux/hackathon-app.yaml
   ```
+
+  ```
+  flux create kustomization podinfo \
+  --target-namespace=podinfo \
+  --source=podinfo \
+  --path="./kustomize" \
+  --prune=true \
+  --interval=5m \
+  --export > ./clusters/cluster-flux/Apps/ppodino/podinfo-kustomization.yaml
+  ```
