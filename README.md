@@ -24,5 +24,5 @@ flux bootstrap github \
   --path="./kustomize" \
   --prune=true \
   --interval=5m \
-  --export > ./clusters/cluster-flux/Apps/ppodino/podinfo-kustomization.yaml
+  --export > ./clusters/cluster-flux/Apps/podinfo/podinfo-kustomization.yaml
   ```
