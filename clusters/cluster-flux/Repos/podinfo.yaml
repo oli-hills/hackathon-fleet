@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: podinfo
+  name: appRepo
   namespace: flux-system
 spec:
   interval: 30s
@@ -12,7 +12,7 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: flux-system
+  name: appRepoFolder
   namespace: flux-system
 spec:
   interval: 1m0s

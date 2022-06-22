@@ -26,3 +26,21 @@ flux bootstrap github \
   --interval=5m \
   --export > ./clusters/cluster-flux/Apps/podinfo/podinfo-kustomization.yaml
   ```
+
+  ```
+  flux create source git podinfo \
+  --url=https://github.com/stefanprodan/podinfo \
+  --branch=master \
+  --interval=30s \
+  --export > ./base/namespaces/info/podinfo/repo.yaml
+  ```
+
+  ```
+  flux create kustomization podinfo \
+  --target-namespace=info \
+  --source=podinfo \
+  --path="./kustomize" \
+  --prune=true \
+  --interval=5m \
+  --export > ../base/namespaces/info/podinfo/kustomization.yaml
+  ```
